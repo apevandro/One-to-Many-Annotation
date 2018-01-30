@@ -1,0 +1,37 @@
+# Additional column strategy
+
+INSERT INTO COURSES (CourseId, Name, TotalCredits)
+VALUES (2142, 'Engenharia Civil', 1500);
+
+INSERT INTO STUDENTS (StudentId, Name, Address, City, CourseId)
+VALUES (111, 'Edvaldo Carlos Silva', 'Av. Sao Carlos, 186', 'Sao Carlos-SP', 2142);
+
+INSERT INTO STUDENTS (StudentId, Name, Address, City, CourseId)
+VALUES (112, 'Joao Benedito Scapin', 'R. Jose Bonifacio, 70', 'Sao Carlos-SP', 2142);
+
+INSERT INTO STUDENTS (StudentId, Name, Address, City, CourseId)
+VALUES (113, 'Carol Antonia Silveira', 'R. Luiz Camoes, 120', 'Ibate-SP', 2142);
+
+--------------------------------------------------------------
+# Join table strategy
+
+INSERT INTO COURSES (CourseId, Name, TotalCredits)
+VALUES (2142, 'Engenharia Civil', 1500);
+
+INSERT INTO STUDENTS (StudentId, Name, Address, City)
+VALUES (111, 'Edvaldo Carlos Silva', 'Av. Sao Carlos, 186', 'Sao Carlos-SP');
+
+INSERT INTO STUDENTS (StudentId, Name, Address, City)
+VALUES (112, 'Joao Benedito Scapin', 'R. Jose Bonifacio, 70', 'Sao Carlos-SP');
+
+INSERT INTO STUDENTS (StudentId, Name, Address, City)
+VALUES (113, 'Carol Antonia Silveira', 'R. Luiz Camoes, 120', 'Ibate-SP');
+
+INSERT INTO COURSE_STUDENT (CourseId, StudentId)
+VALUES (2142, 111);
+
+INSERT INTO COURSE_STUDENT (CourseId, StudentId)
+VALUES (2142, 112);
+
+INSERT INTO COURSE_STUDENT (CourseId, StudentId)
+VALUES (2142, 113);

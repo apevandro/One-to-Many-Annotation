@@ -1,0 +1,39 @@
+# Additional column strategy
+
+create table COURSES (
+       CourseId integer not null,
+       Name varchar(255),
+       TotalCredits integer,
+       primary key (CourseId));
+
+create table STUDENTS (
+       StudentId integer not null,
+       Name varchar(255),
+       Address varchar(255),
+       City varchar(255),
+       CourseId integer,
+       primary key (StudentId),
+       foreign key (CourseId) references COURSES (CourseId));
+
+--------------------------------------------------------------
+# Join table strategy
+
+create table COURSES (
+       CourseId integer not null,
+       Name varchar(255),
+       TotalCredits integer,
+       primary key (CourseId));
+
+create table STUDENTS (
+       StudentId integer not null,
+       Name varchar(255),
+       Address varchar(255),
+       City varchar(255),
+       primary key (StudentId));
+
+create table COURSE_STUDENT (
+       CourseId integer not null,
+       StudentId integer not null,
+       primary key (CourseId, StudentId),
+       foreign key (CourseId) references COURSES (CourseId),
+       foreign key (StudentId) references STUDENTS (StudentId));
